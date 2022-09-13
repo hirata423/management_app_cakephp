@@ -1,0 +1,12 @@
+/* //統一したい部分 */
+body {
+    text-align: center;
+    min-height: 100vh;
+}
+button {
+    border-radius: 15px;
+    font-size: 15px;
+    width: 150px;
+    background-color: orange;
+    border: none;
+}
