@@ -50,14 +50,11 @@ return static function (RouteBuilder $routes) {
          * its action called 'display', and we pass a param to select the view file
          * to use (in this case, templates/Pages/home.php)...
          */
-
-        //`/indexルート`の時は`controllor`は`Template/Homesと
-        //`HomesController.php`の`HomesController`クラスを参照し、
-        //その中の`index()`を実行する
         $builder->connect('/', ['controller' => 'Homes', 'action' => 'index']);
-        $builder->connect('/subindex', ['controller' => 'Subindex', 'action' => 'subindex']);
-
         $builder->connect('/mypage', ['controller' => 'Mypages', 'action' => 'mypage']);
+        $builder->connect('/list', ['controller' => 'Lists', 'action' => 'list']);
+        $builder->connect('/create', ['controller' => 'Creates', 'action' => 'create']);
+
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.

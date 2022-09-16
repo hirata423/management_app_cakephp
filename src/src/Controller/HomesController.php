@@ -20,7 +20,7 @@ class HomesController extends AppController
         $text2 = "作業時間管理アプリ";
         $this->set("text2", $text2);
 
-        $link_text = ["MyPage","ログイン"];
+        $link_text = ["マイページ","ログイン"];
         $this->set("link_text", $link_text);
     }
 }

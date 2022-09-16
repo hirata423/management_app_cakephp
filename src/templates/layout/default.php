@@ -32,9 +32,15 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <?= $this->Html->css(['normalize.min', 'milligram.min', 'flame']) ?>
 
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+
+    <?= $this->Html->css(['index']) ?>
+    <?= $this->Html->css(['list']) ?>
+    <?= $this->Html->css(['mypage']) ?>
+
 </head>
 
 <body>

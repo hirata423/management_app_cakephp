@@ -39,6 +39,7 @@ class AppController extends Controller
      *
      * @return void
      */
+
     public function initialize(): void
     {
         parent::initialize();

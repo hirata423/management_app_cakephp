@@ -1,5 +1,6 @@
 .login_user {
     font-weight: 500;
+    font-size: 25px;
     margin-top: 130px;
 }
 
@@ -7,5 +8,6 @@ p {
     margin: 20px 0;
 }
 .date {
-    font-size: 30px;
+    font-weight: 500;
+    font-size: 25px;
 }

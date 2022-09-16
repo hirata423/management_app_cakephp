@@ -7,6 +7,7 @@ button {
     border-radius: 15px;
     font-size: 15px;
     width: 150px;
-    background-color: orange;
+    background-color: rgb(255, 213, 0);
+    color: black;
     border: none;
 }
