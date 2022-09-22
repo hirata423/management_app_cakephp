@@ -54,10 +54,24 @@ class TimesTable extends AppTable
         ]);
     }
 
-    public function getData($id)
+    public function register($post)
     {
-        return $this->find()->where(['id' => $id]);
+        $entity = $this->newEntity($post);
+        if ($this->save($entity)) {
+        } else {
+            return;
+        }
     }
+
+
+    public function submit($post)
+    {
+        $entity = $this->newEntity($post);
+        if ($this->save($entity)) {
+        } else {
+        }
+    }
+
 
     /**
      * Default validation rules.
@@ -80,8 +94,7 @@ class TimesTable extends AppTable
 
         $validator
             ->dateTime('finish_time')
-            ->requirePresence('finish_time', 'create')
-            ->notEmptyDateTime('finish_time');
+            ->allowEmptyDateTime('finish_time');
 
         $validator
             ->integer('user_id')

@@ -54,7 +54,7 @@ class User extends Entity
     }
 
 
-    public function getName()
+    public function get_Login_User_Name()
     {
         return $this->name . 'さん';
     }

@@ -45,6 +45,7 @@ class UsersTable extends AppTable
     {
         parent::initialize($config);
 
+        // $this->loadComponent('Paginator');
         $this->Times = TableRegistry::getTableLocator()->get("Times");
 
         $this->setDisplayField('name');
@@ -66,6 +67,7 @@ class UsersTable extends AppTable
 
 
 
+
     /**
      *
      * Default validation rules.
@@ -73,6 +75,7 @@ class UsersTable extends AppTable
      * @param \Cake\Validation\Validator $validator Validator instance.
      * @return \Cake\Validation\Validator
      */
+
 
     public function validationDefault(Validator $validator): Validator
     {

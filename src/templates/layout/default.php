@@ -30,28 +30,27 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'flame']) ?>
-
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 
+    <?= $this->Html->css(['normalize.min', 'milligram.min', 'flame']) ?>
     <?= $this->Html->css(['index']) ?>
     <?= $this->Html->css(['list']) ?>
     <?= $this->Html->css(['mypage']) ?>
+    <?= $this->Html->css(['create']) ?>
 
 </head>
 
 <body>
     <?= $this->element("header") ?>
-    <!-- <?= $this->element("h2", ["text2"=>$text2]) ?>
-    -->
+    <!--未使用  $this->element("h2", ["text2"=>$text2]) ?>-->
 
     <main class="main">
-        <div class="container"></div>
-        <?= $this->Flash->render() ?>
-        <?= $this->fetch('content') ?>
+        <div class="container">
+            <?= $this->Flash->render() ?>
+            <?= $this->fetch('content') ?>
         </div>
     </main>
     <footer>

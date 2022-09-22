@@ -48,6 +48,7 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        // $this->loadComponent('Paginator');
 
         /*
          * Enable the following component for recommended CakePHP form protection settings.
@@ -55,6 +56,8 @@ class AppController extends Controller
          */
         //$this->loadComponent('FormProtection');
     }
+
+
 
     public function checksession()
     {
