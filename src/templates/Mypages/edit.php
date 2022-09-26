@@ -37,7 +37,7 @@
             <input type="hidden" name="_csrfToken" autocomplete="off"
                 value="<?= $this->request->getAttribute('csrfToken') ?>">
             <td>
-                <button class="table_btn" type="submit">登録</button>
+                <button class="btn" type="submit">登録</button>
             </td>
         </tr>
     </form>

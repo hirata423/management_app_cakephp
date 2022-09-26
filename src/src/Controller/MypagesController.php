@@ -40,17 +40,28 @@ class MypagesController extends AppController
         $post = $this->request->getData();
         if (count($post)) {
             $this->Times->register($post);
+            return $this->redirect(['action' => 'list']);
         }
     }
 
     public function edit($id)
     {
         //レコードID
-        $recordID = $this->set("time", $this->Times->get($id));
+        $entity = $this->set("time", $this->Times->get($id));
         //$_POST[]で取得したフォーム内容
-        $post = $this->request->getData();
-        if (count($post)) {
-            $this->Times->submit($post);
-        }
+        // $post = $this->request->getData();
+        $this->Times->update($entity);
+        return $this->redirect(['action' => 'list']);
+    }
+
+    public function delete($id)
+    {
+        $entity = $this->Times->get($id);
+        // if ($this->exists($entity)) {
+        $this->Times->deleteRecord($entity);
+        return $this->redirect(['action' => 'list']);
+        //リダイレクト処理入れて、削除完了メッセージを入れる
+        // } else {
+        // }
     }
 }

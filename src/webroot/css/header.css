@@ -1,18 +1,30 @@
 .header {
     color: white;
     background-color: #047575;
+    display: flex;
+    justify-content: space-around;
 }
 .header_title {
-    max-width: 600px;
     line-height: 85px;
     font-weight: 900;
     height: 90px;
     margin: 0;
-    text-align: center;
 }
 .header_link {
     color: White;
 }
 .header_link:hover {
+    color: greenyellow;
+}
+
+.logoutBtn {
+    margin-top: 25px;
+    margin-bottom: 0;
+    font-size: 17px;
+    border-radius: 0;
+    background-color: #047575;
+    color: white;
+}
+.logoutBtn:hover {
     color: greenyellow;
 }

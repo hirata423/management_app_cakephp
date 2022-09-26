@@ -36,6 +36,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('script') ?>
 
     <?= $this->Html->css(['normalize.min', 'milligram.min', 'flame']) ?>
+    <?= $this->Html->css(['header']) ?>
     <?= $this->Html->css(['index']) ?>
     <?= $this->Html->css(['list']) ?>
     <?= $this->Html->css(['mypage']) ?>

@@ -64,9 +64,9 @@ input[type="reset"]:focus,
 input[type="reset"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:hover {
-    background-color: #606c76;
+    /* background-color: #606c76; */
     border-color: #606c76;
-    color: #fff;
+    /* color: #fff; */
     outline: 0;
 }
 .button[disabled],
@@ -211,7 +211,7 @@ select {
     width: 250px;
 }
 input:hover {
-    background-color: lemonchiffon;
+    background-color: rgb(188, 188, 188);
 }
 input[type="email"]:focus,
 input[type="number"]:focus,
@@ -488,8 +488,8 @@ ol {
 ul {
     list-style: circle inside;
 }
-.button,
-button,
+/* .button, */
+/* button, */
 dd,
 dt,
 li {

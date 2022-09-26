@@ -13,3 +13,8 @@
     background-color: yellow;
     border-radius: 10px;
 }
+.locationBtn:hover {
+    background-color: #606c76;
+    border-color: #606c76;
+    color: #fff;
+}

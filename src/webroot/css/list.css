@@ -4,10 +4,8 @@
 }
 .input_and_btn {
     margin: 40px 0;
-}
-.search-form {
-    display: inline-block;
-    margin-right: 450px;
+    justify-content: space-around;
+    display: flex;
 }
 .search-form.searc-box {
     border-radius: 10px;
@@ -15,14 +13,20 @@
 .btn {
     width: 60px;
     padding: 0;
-    margin-right: 50px;
+    margin-right: 20px;
+}
+.btn:hover {
+    background-color: #606c76;
+    border-color: #606c76;
+    color: #fff;
 }
 .table_btn {
-    width: 60px;
+    width: 22px;
     padding: 0;
-    margin-right: 0;
+    margin-top: 5px;
+    margin-right: 10px;
+    background-color: white;
 }
-
 table {
     width: 70%;
     margin: 0 auto;

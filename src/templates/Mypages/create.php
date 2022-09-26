@@ -1,5 +1,5 @@
 <h2 class="title">作業開始</h2>
-<form class="create_form" action="/mypage/list" method="post">
+<form class="create_form" action="/mypage/create" method="post">
 
     <label for="category">
         <!-- //inputのcssはmilligram.min.cssに記述あり -->
@@ -27,10 +27,10 @@
             value="<?= $this->request->getAttribute('csrfToken') ?>">
     </label>
     <p>
-        <button type="submit" name="submit">登録</button>
+        <button class="locationBtn" type="submit" name="submit">登録</button>
     </p>
 </form>
 
 <p>
-    <button type="button" title="一覧に戻ります" onclick="location.href='/mypage/list'">戻る</button>
+    <button class="locationBtn" type="button" title="一覧に戻ります" onclick="location.href='/mypage/list'">戻る</button>
 </p>

@@ -59,17 +59,19 @@ class TimesTable extends AppTable
         $entity = $this->newEntity($post);
         if ($this->save($entity)) {
         } else {
-            return;
         }
     }
 
-
-    public function submit($post)
+    public function update($entity)
     {
-        $entity = $this->newEntity($post);
-        if ($this->save($entity)) {
-        } else {
-        }
+        $entity = $this->patchEntity($entity);
+        $this->save($entity);
+    }
+
+
+    public function deleteRecord($entity)
+    {
+        $this->delete($entity);
     }
 
 

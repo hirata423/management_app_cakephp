@@ -66,8 +66,6 @@ class UsersTable extends AppTable
     }
 
 
-
-
     /**
      *
      * Default validation rules.
