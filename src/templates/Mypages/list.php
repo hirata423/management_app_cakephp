@@ -1,10 +1,14 @@
+<p class="login_user">
+    <!-- // Entity/User.php -->
+    <span class="login_user_span">●</span> <?= $user->get_Login_User_Name() ?>
+</p>
 <h1 class="title">
     記録一覧
 </h1>
 <div class="input_and_btn">
     <div>
         <form action="list.php" method="get" class="search-form">
-            <input type="text" class="search-box" placeholder="内容で検索" name="keyword">
+            <input type="text" class="search-box" placeholder="内容で検索 (調整中)" name="keyword">
         </form>
     </div>
     <div>
@@ -16,7 +20,7 @@
 
     <tr>
         <?php  $list_titles=["内容","開始時間","終了時間","経過時間","",""];
-        foreach ($list_titles as $list_title):?>
+    foreach ($list_titles as $list_title):?>
         <th>
             <?=$list_title?>
         </th>
@@ -41,7 +45,7 @@
         </td>
         <td>
             <?php echo $finish_times ?
-            $finish_times->diff($start_times)->format('%d-%h:%i') : "進行中";
+            $finish_times->diff($start_times)->format('%d-%h:%I') : "進行中";
         ?>
         </td>
         <td>
@@ -52,8 +56,7 @@
         </td>
         <td>
             <button class="table_btn"
-                onClick="location.href='/mypage/list/<?= $time->id ?>'"
-                title='作業内容の削除ができます'>
+                onClick="location.href='/mypage/<?= $time->id ?>'">
                 <?php echo $this->Html->image('dustBox.png', ['alt' => 'DustBox']) ?>
             </button>
         </td>

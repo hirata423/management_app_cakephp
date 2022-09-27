@@ -52,10 +52,10 @@ return static function (RouteBuilder $routes) {
          */
         $builder->connect('/', ['controller' => 'Homes', 'action' => 'index']);
         // $builder->connect('/mypage', ['controller' => 'Mypages', 'action' => 'index']);
-        $builder->connect('/mypage/list', ['controller' => 'Mypages', 'action' => 'list']);
+        $builder->connect('/mypage', ['controller' => 'Mypages', 'action' => 'list']);
         $builder->connect('/mypage/create', ['controller' => 'Mypages', 'action' => 'create']);
         $builder->connect('/mypage/edit/*', ['controller' => 'Mypages', 'action' => 'edit']);
-        $builder->connect('/mypage/list/*', ['controller' => 'Mypages', 'action' => 'delete']);
+        $builder->connect('/mypage/*', ['controller' => 'Mypages', 'action' => 'delete']);
 
 
 

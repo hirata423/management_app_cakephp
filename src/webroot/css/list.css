@@ -2,6 +2,14 @@
     margin-top: 40px;
     font-size: 30px;
 }
+.login_user {
+    margin-top: 10px;
+    text-align: right;
+}
+.login_user_span {
+    font-size: 23px;
+    color: rgb(2, 216, 34);
+}
 .input_and_btn {
     margin: 40px 0;
     justify-content: space-around;

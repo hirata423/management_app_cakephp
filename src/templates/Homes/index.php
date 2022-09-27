@@ -11,6 +11,10 @@
 <p class="introduction">作業時間管理アプリ</p>
 
 <p>
-    <button onClick="location.href='/mypage/list'">始める</button>
-    <!-- <button>ログイン</button> -->
+    <!-- //セッションユーザーを入れる -->
+    <?php if ($user->get_Login_User_Name()): ?>
+    <button onClick="location.href='/mypage'">始める</button>
+    <?php elseif (!$user->get_Login_User_Name()):?>
+    <button>ログイン</button>
+    <?php endif; ?>
 </p>

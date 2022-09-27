@@ -8,5 +8,5 @@
 </p> -->
 <p>
     <!-- 一覧 -->
-    <button class="locationBtn" onClick="location.href='/mypage/list'">一覧</button>
+    <button class="locationBtn" onClick="location.href='/mypage'">一覧</button>
 </p>

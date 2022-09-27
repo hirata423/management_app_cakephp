@@ -62,16 +62,21 @@ class TimesTable extends AppTable
         }
     }
 
-    public function update($entity)
+    public function update($entity, $post)
     {
-        $entity = $this->patchEntity($entity);
-        $this->save($entity);
+        //引数をでentityを先にしないとエラー
+        $entity = $this->patchEntity($entity, $post);
+        if ($this->save($entity)) {
+        } else {
+        }
     }
 
 
     public function deleteRecord($entity)
     {
-        $this->delete($entity);
+        if ($this->delete($entity)) {
+        } else {
+        }
     }
 
 

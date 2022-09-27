@@ -39,7 +39,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->css(['header']) ?>
     <?= $this->Html->css(['index']) ?>
     <?= $this->Html->css(['list']) ?>
-    <?= $this->Html->css(['mypage']) ?>
     <?= $this->Html->css(['create']) ?>
 
 </head>
