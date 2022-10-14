@@ -40,11 +40,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->css(['index']) ?>
     <?= $this->Html->css(['list']) ?>
     <?= $this->Html->css(['create']) ?>
+    <?= $this->Html->css(['users']) ?>
 
 </head>
 
 <body>
-    <?= $this->element("header") ?>
+    <?= $this->element("header", []) ?>
     <!--未使用  $this->element("h2", ["text2"=>$text2]) ?>-->
 
     <main class="main">

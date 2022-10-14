@@ -31,10 +31,9 @@ use Exception;
  * @method \App\Model\Entity\User[]|\Cake\Datasource\ResultSetInterface|false deleteMany(iterable $entities, $options = [])
  * @method \App\Model\Entity\User[]|\Cake\Datasource\ResultSetInterface deleteManyOrFail(iterable $entities, $options = [])
  */
-class UsersTable extends AppTable
+class UsersTable extends Table
 {
     public const TABLE = 'users';
-
     /**
      * Initialize method
      *
@@ -65,16 +64,12 @@ class UsersTable extends AppTable
             ->first();
     }
 
-
     /**
-     *
      * Default validation rules.
      *
      * @param \Cake\Validation\Validator $validator Validator instance.
      * @return \Cake\Validation\Validator
      */
-
-
     public function validationDefault(Validator $validator): Validator
     {
         $validator

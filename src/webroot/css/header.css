@@ -25,6 +25,19 @@
     background-color: #047575;
     color: white;
 }
+.not_login_user_span {
+    font-size: 23px;
+    color: rgb(241, 88, 27);
+}
+
+.not_login {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 17px;
+    border-radius: 0;
+    background-color: #047575;
+    color: white;
+}
 .logoutBtn:hover {
     color: greenyellow;
 }

@@ -420,5 +420,11 @@ return [
      */
     'Session' => [
         'defaults' => 'php',
-    ],
-];
+        // 'cookie' => env('APP_NAME'),
+        // 'timeout' => 1800,
+        // 'ini' => [
+        //     'session.cookie_secure' => filter_var(env('SERVER', falese), FILTER_VALIDATE_BOOLEAN),
+        //     'session.cookie_path' => '/',
+        // ]
+        ]
+        ];

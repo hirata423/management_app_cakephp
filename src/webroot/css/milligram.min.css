@@ -185,6 +185,7 @@ hr {
     margin: 3rem 0;
 }
 input[type="email"],
+input[type="name"],
 input[type="number"],
 input[type="password"],
 input[type="search"],

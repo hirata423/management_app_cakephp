@@ -12,9 +12,9 @@
 
 <p>
     <!-- //セッションユーザーを入れる -->
-    <?php if ($user->get_Login_User_Name()): ?>
-    <button onClick="location.href='/mypage'">始める</button>
-    <?php elseif (!$user->get_Login_User_Name()):?>
-    <button>ログイン</button>
+    <?php if (isset($user)): ?>
+    <button class="locationBtn" onClick="location.href='/mypage'">始める</button>
+    <?php else:?>
+    <button class="locationBtn" onClick="location.href='/users/login'">ログイン</button>
     <?php endif; ?>
 </p>

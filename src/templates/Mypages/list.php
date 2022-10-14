@@ -63,15 +63,3 @@
     </tr>
     <?php endforeach; ?>
 </table>
-
-
-<!-- //ページネーション -->
-<!-- <div class="paginator">
-<ul class="pagination">
-<?= $this->Paginator->first('<<') ?>
-<?= $this->Paginator->prev('<') ?>
-<?= $this->Paginator->numbers() ?>
-<?= $this->Paginator->next('>') ?>z
-<?= $this->Paginator->last('>>') ?>
-</ul>
-</div> -->

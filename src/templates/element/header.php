@@ -5,6 +5,11 @@
         </h2>
     </div>
     <div>
-        <button class="logoutBtn" onClick="location.href='/logout'">ログアウト</button>
+        <!-- //セッションユーザーを入れる -->
+        <?php if (isset($user)):?>
+        <button class="logoutBtn" onClick="location.href='/users/logout'">ログアウト</button>
+        <?php else:?>
+        <h2 class="not_login"><span class="not_login_user_span">●</span> 未ログイン</h2>
+        <?php endif; ?>
     </div>
 </div>

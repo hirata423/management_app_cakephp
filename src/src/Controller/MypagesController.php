@@ -15,25 +15,17 @@ class MypagesController extends AppController
         parent::initialize();
         $this->loadModel('Users');
         $this->loadModel('Times');
-        // $this->loadComponent('Paginator');
 
         date_default_timezone_set('Asia/Tokyo');
     }
 
-    //ログインユーザーに紐づくTimesテーブル情報
     public function index()
     {
-        //セッションでログインしたユーザー変数にして入れる(例：$session_user)
-        //getData(1)はDBに登録されているユーザーのID番号。
-        $this->set("user", $this->Users->getData(1));
     }
 
     //レコード一覧の取得
     public function list()
     {
-        //セッションでログインしたユーザー変数にして入れる(例：$session_user)
-        // $this->paginate['limit'] = 7;
-        $this->set("user", $this->Users->getData(1));
     }
 
     public function order()
