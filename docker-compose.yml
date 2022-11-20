@@ -26,10 +26,24 @@ services:
       - ./docker/mysql/conf.d:/etc/mysql/conf.d
       - db-store:/var/lib/mysql
     ports:
-      - web:3306
+      - 3306:3306
     environment:
       MYSQL_DATABASE: sample
       MYSQL_USER: user
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
       TZ: "Asia/Tokyo"
+  phpmyadmin:
+    image: phpmyadmin
+    # links:
+    #   - mysql
+    ports:
+      - 8080:80
+    volumes:
+      - /sessions
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_DATABASE=sample
+      - PMA_USER=user
+      - PMA_PASSWORD=secret
+      - PMA_ROOT_PASSWORD=secret
