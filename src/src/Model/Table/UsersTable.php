@@ -34,12 +34,7 @@ use Exception;
 class UsersTable extends Table
 {
     public const TABLE = 'users';
-    /**
-     * Initialize method
-     *
-     * @param array $config The configuration for the Table.
-     * @return void
-     */
+
     public function initialize(array $config): void
     {
         parent::initialize($config);
@@ -64,12 +59,7 @@ class UsersTable extends Table
             ->first();
     }
 
-    /**
-     * Default validation rules.
-     *
-     * @param \Cake\Validation\Validator $validator Validator instance.
-     * @return \Cake\Validation\Validator
-     */
+
     public function validationDefault(Validator $validator): Validator
     {
         $validator

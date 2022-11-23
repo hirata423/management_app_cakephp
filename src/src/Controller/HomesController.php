@@ -10,12 +10,12 @@ use Cake\ORM\TableRegistry;
 
 class HomesController extends AppController
 {
-    public function initialize(): void
-    {
-        parent::initialize();
-        $this->loadModel('Users');
-        $this->loadModel('Times');
-    }
+    // public function initialize(): void
+    // {
+    //     parent::initialize();
+    //     $this->loadModel('Users');
+    //     $this->loadModel('Times');
+    // }
 
     public function index()
     {

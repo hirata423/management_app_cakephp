@@ -13,7 +13,7 @@
 <p>
     <!-- //セッションユーザーを入れる -->
     <?php if (isset($user)): ?>
-    <button class="locationBtn" onClick="location.href='/mypage'">始める</button>
+    <button class="locationBtn" onClick="location.href='/mypage/list'">始める</button>
     <?php else:?>
     <button class="locationBtn" onClick="location.href='/users/login'">ログイン</button>
     <?php endif; ?>

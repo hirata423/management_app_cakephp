@@ -8,12 +8,7 @@ use Cake\Core\Configure;
 use Cake\Http\Response;
 use Cake\ORM\TableRegistry;
 
-/**
- * Users Controller
- *
- * @property \App\Model\Table\UsersTable $Users
- * @method \App\Model\Entity\User[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
- */
+
 class UsersController extends AppController
 {
     public function initialize(): void
@@ -26,28 +21,15 @@ class UsersController extends AppController
     public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
-        // 無限リダイレクトループ回避
+        // リダイレクトループ回避
         $this->Authentication->addUnauthenticatedActions(['login','add']);
     }
 
-    /**
-     * Index method
-     *
-     * @return \Cake\Http\Response|null|void Renders view
-     */
     public function index()
     {
-        //32行目で未ログインでも表示できるため、強制的にリダイレクト
+        //未ログイン時のリダイレクト
         return $this->redirect('/users/login');
-        // $users = $this->paginate($this->Users);
-        // $this->set(compact('users'));
     }
-
-    /**
-     * Add method
-     *
-     * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
-     */
 
     //ユーザー登録
     public function add()
@@ -63,7 +45,6 @@ class UsersController extends AppController
         }
         $this->set(compact('userID'));
     }
-
 
     //ログイン
     public function login()
@@ -82,7 +63,6 @@ class UsersController extends AppController
         }
     }
 
-
     //ログアウト
     public function logout()
     {
@@ -98,16 +78,8 @@ class UsersController extends AppController
     }
 
 
-
     //以下はAdminとして使用する
 
-    /**
-     * View method
-     *
-     * @param string|null $id User id.
-     * @return \Cake\Http\Response|null|void Renders view
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function view($id = null)
     {
         $user = $this->Users->get($id, [
@@ -116,13 +88,6 @@ class UsersController extends AppController
         $this->set(compact('user'));
     }
 
-    /**
-     * Edit method
-     *
-     * @param string|null $id User id.
-     * @return \Cake\Http\Response|null|void Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function edit($id = null)
     {
         $user = $this->Users->get($id, [
@@ -139,13 +104,6 @@ class UsersController extends AppController
         $this->set(compact('user'));
     }
 
-    /**
-     * Delete method
-     *
-     * @param string|null $id User id.
-     * @return \Cake\Http\Response|null|void Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);

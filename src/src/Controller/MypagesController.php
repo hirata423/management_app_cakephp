@@ -15,20 +15,12 @@ class MypagesController extends AppController
         parent::initialize();
         $this->loadModel('Users');
         $this->loadModel('Times');
-
         date_default_timezone_set('Asia/Tokyo');
-    }
 
-    public function index()
-    {
     }
-
+    
     //レコード一覧の取得
     public function list()
-    {
-    }
-
-    public function order()
     {
     }
 
@@ -37,6 +29,7 @@ class MypagesController extends AppController
     {
         $post = $this->request->getData();
         if (count($post)) {
+            // dd($post);
             $this->Times->register($post);
             return $this->redirect(['action' => 'list']);
         }
@@ -45,14 +38,13 @@ class MypagesController extends AppController
     //レコードの選択と終了
     public function edit($id)
     {
-        //下2行纏めたい
-        $this->set("time", $this->Times->get($id));
-        $entity = $this->Times->get($id);
+        $time = $this->Times->get($id);
         $post = $this->request->getData();
         if (count($post)) {
-            $this->Times->update($entity, $post);
+            $this->Times->update($time, $post);
             return $this->redirect(['action' => 'list']);
         }
+        $this->set("time", $time);
     }
 
     //レコードの削除

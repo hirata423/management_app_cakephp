@@ -32,5 +32,5 @@
 </form>
 
 <p>
-    <button class="locationBtn" type="button" title="一覧に戻ります" onclick="location.href='/mypage'">戻る</button>
+    <button class="locationBtn" type="button" title="一覧に戻ります" onclick="location.href='/mypage/list'">戻る</button>
 </p>
