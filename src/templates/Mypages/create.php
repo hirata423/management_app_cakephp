@@ -20,7 +20,7 @@
     </label>
     <label>
         <!-- セッションIdをValueに格納 -->
-        <input type="hidden" name="user_id" value="1">
+        <input type="hidden" name="user_id" value="<?= $authId ?>" >
     </label>
     <label>
         <input type="hidden" name="_csrfToken" autocomplete="off"

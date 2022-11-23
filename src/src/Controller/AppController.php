@@ -16,17 +16,10 @@ class AppController extends Controller
 
         $this->checkSession();
 
-        //Session_ID
-        $session = $this->getRequest()->getSession();
-        $id = $session->read('Auth.id');
-
-        // dd($id);
-        if ($id) {
-            $this->set("user", $this->Users->getData($id));
-        }
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-        $this->loadComponent('Authentication.Authentication');// 認証結果に応じてサイトをロック
+        //認証結果に応じてサイトをロック
+        $this->loadComponent('Authentication.Authentication');
     }
 
     public function beforeFilter(\Cake\Event\EventInterface $event)
@@ -39,13 +32,13 @@ class AppController extends Controller
 
     public function checkSession()
     {
-        //Session_ID
+        //Session_ID取得
         $session = $this->getRequest()->getSession();
-        $id = $session->read('Auth.id');
-        if($id) {
-            $user = $this->Users->getData($id);
-            // dd($user);
+        $authId = $session->read('Auth.id');
+        if($authId) {
+            $user = $this->Users->getTimesData($authId);
             $this->set("user", $user);
+            $this->set("authId",$authId);
         }
     }
 }

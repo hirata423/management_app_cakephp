@@ -30,6 +30,7 @@ class MypagesController extends AppController
         $post = $this->request->getData();
         if (count($post)) {
             // dd($post);
+
             $this->Times->register($post);
             return $this->redirect(['action' => 'list']);
         }

@@ -51,7 +51,7 @@ class UsersTable extends Table
             ->setBindingKey('id');
     }
 
-    public function getData($id)
+    public function getTimesData($id)
     {
         return $this->find()
             ->where(['id' => $id])

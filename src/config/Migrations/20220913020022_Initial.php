@@ -9,34 +9,32 @@ class Initial extends AbstractMigration
     public function up()
     {
         $table = $this->table('users')
-               ->addColumn('name', 'string', ['default' => null,'limit' => 255,'null' => false,])
-               ->addColumn('email', 'string', ['default' => null,'limit' => 255,'null' => false,])
-               ->addColumn('password', 'string', ['default' => null,'limit' => 255,'null' => false,])
-               ->addTimeStamps()
+                ->addColumn('name', 'string', ['default' => null,'limit' => 255,'null' => false,])
+                ->addColumn('email', 'string', ['default' => null,'limit' => 255,'null' => false,])
+                ->addColumn('password', 'string', ['default' => null,'limit' => 255,'null' => false,])
+                ->addTimeStamps()
 
-               ->addIndex('email', ['unique'=>true])
+                ->addIndex('email', ['unique'=>true])
 
             ->create();
-        //->save();だとrillbackできない？
 
         $table = $this->table('times')
-               ->addColumn('category', 'string', ['default' => null,'limit' => 255,'null' => false,])
-               ->addColumn('start_time', 'datetime', ['default' => null,'null' => false,])
-               ->addColumn('finish_time', 'datetime', ['default' => null,'null' => false,])
-               ->addColumn('user_id', 'integer', ['default' => null,'null' => false,])
-               ->addForeignKey(
-                   'user_id',
-                   'users',
-                   'id',
-                   //外部キーオプション["RESTRICT","CASCADE","SET NULL","NO ACTIONの違い
-                   //https://qiita.com/suin/items/21fe6c5a78c1505b19cb
-                   //この場合,CASCADE? 参照元(users)の変更に依存する。DELETEの時に削除される
-                   ['delete' => 'CASCADE']
-               )
-               ->addTimeStamps()
+                ->addColumn('category', 'string', ['default' => null,'limit' => 255,'null' => false,])
+                ->addColumn('start_time', 'datetime', ['default' => null,'null' => false,])
+                ->addColumn('finish_time', 'datetime', ['default' => null,'null' => false,])
+                ->addColumn('user_id', 'integer', ['default' => null,'null' => false,])
+                ->addForeignKey(
+                    'user_id',
+                    'users',
+                    'id',
+                    //外部キーオプション["RESTRICT","CASCADE","SET NULL","NO ACTIONの違い
+                    //https://qiita.com/suin/items/21fe6c5a78c1505b19cb
+                    //この場合,CASCADE? 参照元(users)の変更に依存する。DELETEの時に削除される
+                    ['delete' => 'CASCADE']
+                )
+                ->addTimeStamps()
 
-             ->create();
-        //->save();だとrillbackできない？
+            ->create();
     }
 
     public function down()
