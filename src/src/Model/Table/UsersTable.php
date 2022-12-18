@@ -39,7 +39,6 @@ class UsersTable extends Table
     {
         parent::initialize($config);
 
-        // $this->loadComponent('Paginator');
         $this->Times = TableRegistry::getTableLocator()->get("Times");
 
         $this->setDisplayField('name');
@@ -51,11 +50,19 @@ class UsersTable extends Table
             ->setBindingKey('id');
     }
 
-    public function getTimesData($id)
+    //未使用
+    // public function getTimesData($id)
+    // {
+    //     return $this->find()
+    //         ->where(['id' => $id])
+    //         ->contain(['Times'])
+    //         ->first();
+    // }
+
+    public function getAuthUser($id)
     {
         return $this->find()
             ->where(['id' => $id])
-            ->contain(['Times'])
             ->first();
     }
 

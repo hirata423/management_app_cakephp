@@ -11,6 +11,7 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Query;
 use Cake\ORM\Table;
 use Exception;
+use Cake\Core\Configure;
 
 class TimesTable extends AppTable
 {
@@ -25,7 +26,7 @@ class TimesTable extends AppTable
 
         $this->hasMany('Users', [
             'foreignKey' => 'id',
-            'joinType' => 'INNER'
+            'joinType' => 'INNER'       
         ]);
     }
 
@@ -45,6 +46,13 @@ class TimesTable extends AppTable
     public function deleteRecord($entity)
     {
         if ($this->delete($entity)) {}
+    }
+
+    public function searchCategory($id,$category){
+        return $this->find()       
+            ->where(['user_id' => $id])
+            ->where(['category Like ' => $category])
+            ->first();
     }
 
     //バリデーション

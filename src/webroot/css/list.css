@@ -62,3 +62,38 @@ table td:first-child {
     padding: 1rem 0.75rem;
     text-align: center;
 }
+
+/* Paginator */
+.paginator {
+    text-align: right;
+    margin: 30px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+.pagination li {
+    margin: 0 0.8rem;
+}
+
+.pagination li a {
+    color: #047575;
+}
+.prev.disabled a,
+.next.disabled a {
+    cursor: not-allowed;
+    color: #606c76;
+}
+.asc:after {
+    content: " \2193";
+}
+.desc:after {
+    content: " \2191";
+}
+
+.hit {
+    margin-right: 125px;
+}

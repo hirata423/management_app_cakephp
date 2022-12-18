@@ -713,7 +713,7 @@ class PaginatorHelper extends Helper
         ];
 
         $paging = $this->params($options['model']);
-        dd($paging);
+        // dd($paging);
         if (!$paging['pageCount']) {
             $paging['pageCount'] = 1;
         }

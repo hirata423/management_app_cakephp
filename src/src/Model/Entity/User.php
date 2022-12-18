@@ -58,9 +58,11 @@ class User extends Entity
         }
     }
 
-
     public function get_Login_User_Name()
     {
         return $this->name . 'さん';
+
+        //コントローラーで下記を使う
+        // $usersTime = $this->Users->getTimesData($authId);
     }
 }

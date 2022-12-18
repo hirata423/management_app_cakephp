@@ -1,14 +1,18 @@
 <p class="login_user">
-    <!-- // Entity/User.php -->
-    <span class="login_user_span">●</span> <?= $user->get_Login_User_Name() ?>
+    <span class="login_user_span">●</span><?= $loginUser->get_Login_User_Name() ?>
 </p>
 <h1 class="title">
     記録一覧
 </h1>
 <div class="input_and_btn">
     <div>
-        <form action="list.php" method="get" class="search-form">
-            <input type="text" class="search-box" placeholder="内容で検索 (調整中)" name="keyword">
+        <form action="/mypage/list" method="post" class="search-form">
+        <?php if(isset($text)): ?>
+                <input type="text" class="search-box" placeholder="内容で検索 (調整中)" value="<?= $text ?>" name="text">
+            <?php else: ?>
+                <input type="text" class="search-box" placeholder="内容で検索 (調整中)" value="" name="text">
+            <?php endif ;?>
+            <input type="hidden" name="_csrfToken" autocomplete="off" value="<?= $this->request->getAttribute('csrfToken') ?>">
         </form>
     </div>
     <div>
@@ -17,19 +21,15 @@
     </div>
 </div>
 <table>
-
     <tr>
-        <?php  $list_titles=["内容","開始時間","終了時間","経過時間","",""];
-    foreach ($list_titles as $list_title):?>
-        <th>
-            <?=$list_title?>
-        </th>
+        <?php  $list_titles=["内容","開始時間","終了時間","経過時間","",""] ?>
+        <? foreach ($list_titles as $list_title):?>
+            <th>
+                <?=$list_title?>
+            </th>
         <?php endforeach; ?>
     </tr>
-
-    <!-- //userテーブルに紐付けられた、timesテーブルからデータ取得してる。 -->
-    <!-- //TimesTable.phpは不使用-->
-    <?php foreach ($user->times as $time) :?>
+    <?php foreach($user as $time) :?>
     <tr>
         <td>
             <?= $time->category?>
@@ -41,7 +41,7 @@
         </td>
         <td>
             <?php $finish_times=$time->finish_time;
-        echo $finish_times == null ? "ー" : date('Y-m-d H:i', strtotime($finish_times)); ?>
+            echo $finish_times == null ? "ー" : date('Y-m-d H:i', strtotime($finish_times)); ?>
         </td>
         <td>
             <?php echo $finish_times ?
@@ -61,5 +61,14 @@
             </button>
         </td>
     </tr>
-    <?php endforeach; ?>
+<?php endforeach ; ?>
 </table>
+
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('先頭')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->last(__('最後') . ' >>') ?>
+        </ul>
+        <p class="hit" ><?= $this->Paginator->counter(__('{{page}}ページ目　/ {{count}}件の記録')) ?></p>
+    </div>

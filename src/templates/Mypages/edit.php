@@ -22,7 +22,7 @@
                 <!-- //既に終了時間が登録済の場合はDBから表示、無ければ現在時刻の表示だけ。
                 登録されるのは下のhidden -->
                 <?php $finish = $time->finish_time;
-        echo  $finish ? date('Y-m-d H:i', strtotime($time->finish_time)) : date('Y-m-d H:i');?>
+                    echo  $finish ? date('Y-m-d H:i', strtotime($time->finish_time)) : date('Y-m-d H:i');?>
             </td>
             <!-- //送信される終了時刻 -->
             <input type="hidden" name="finish_time"
@@ -36,5 +36,5 @@
     </form>
 </table>
 <div class="input_and_btn">
-    <button class="btn" onClick="location.href='/mypage'">戻る</button>
+    <button class="btn" onClick="location.href='/mypage/list'">戻る</button>
 </div>

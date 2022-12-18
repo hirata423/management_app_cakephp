@@ -1,8 +1,6 @@
 <h2 class="title">作業開始</h2>
 <form class="create_form" action="/mypage/create" method="post">
-
     <label for="category">
-        <!-- //inputのcssはmilligram.min.cssに記述あり -->
         <input class="category_inout" name="category" placeholder="例）勉強" value="" required>
     </label>
     <!-- //以下2つは登録しない。表示だけ。 -->
@@ -30,7 +28,6 @@
         <button class="locationBtn" type="submit" name="submit">登録</button>
     </p>
 </form>
-
 <p>
     <button class="locationBtn" type="button" title="一覧に戻ります" onclick="location.href='/mypage/list'">戻る</button>
 </p>
