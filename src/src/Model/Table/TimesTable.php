@@ -48,12 +48,12 @@ class TimesTable extends AppTable
         if ($this->delete($entity)) {}
     }
 
-    public function searchCategory($id,$category){
-        return $this->find()       
-            ->where(['user_id' => $id])
-            ->where(['category Like ' => $category])
-            ->first();
-    }
+    // public function searchCategory($id,$category){
+    //     return $this->find()       
+    //         ->where(['user_id' => $id])
+    //         ->where(['category Like ' => $category])
+    //         ->first();
+    // }
 
     //バリデーション
     public function validationDefault(Validator $validator): Validator

@@ -7,10 +7,10 @@
 <div class="input_and_btn">
     <div>
         <form action="/mypage/list" method="post" class="search-form">
-        <?php if(isset($text)): ?>
-                <input type="text" class="search-box" placeholder="内容で検索 (調整中)" value="<?= $text ?>" name="text">
+        <?php if(!empty($text)): ?>
+                <input type="text" class="search-box" placeholder="内容で検索" value="<?= $text ?>" name="text">
             <?php else: ?>
-                <input type="text" class="search-box" placeholder="内容で検索 (調整中)" value="" name="text">
+                <input type="text" class="search-box" placeholder="内容で検索" value="" name="text">
             <?php endif ;?>
             <input type="hidden" name="_csrfToken" autocomplete="off" value="<?= $this->request->getAttribute('csrfToken') ?>">
         </form>
@@ -29,7 +29,7 @@
             </th>
         <?php endforeach; ?>
     </tr>
-    <?php foreach($user as $time) :?>
+    <?php foreach($userTime as $time) :?>
     <tr>
         <td>
             <?= $time->category?>
